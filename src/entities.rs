@@ -1,5 +1,3 @@
-use super::payroll_db::PayrollDB;
-
 #[derive(Clone, PartialEq, Debug)]
 pub enum PayType {
     Salaried,
@@ -18,8 +16,4 @@ impl Employee {
             pay_type,
         }
     }
-    pub fn execute(&mut self, db: &mut PayrollDB) {
-        db.add_employee(self);
-    }
 }
-
