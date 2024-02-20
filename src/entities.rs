@@ -1,19 +1,19 @@
+use serde::{Deserialize, Serialize};
+
 #[derive(Clone, PartialEq, Debug)]
 pub enum PayType {
     Salaried,
 }
 
-#[derive(Clone)]
+#[derive(Clone, Serialize, Deserialize)]
 pub struct Employee {
-    pub id: usize,
-    pub pay_type: PayType,    
+    pub name: String
 }
 
 impl Employee {
-    pub fn new(id: usize, pay_type: PayType) -> Employee {
+    pub fn new(name: &str) -> Employee {
         Employee {
-            id,
-            pay_type,
+            name: name.to_owned(),
         }
     }
 }

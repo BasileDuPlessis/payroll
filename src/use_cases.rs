@@ -1,5 +1,5 @@
 use crate::entities::{Employee, PayType};
-use crate::in_memory_db::InMemoryDB;
+use crate::db::InMemoryDB;
 
 pub struct AddEmployee {
     id: usize,
@@ -14,7 +14,7 @@ impl AddEmployee {
         }
     }
     pub fn execute(&mut self) {
-        let salaried_employee = Employee::new(self.id, PayType::Salaried);
+       // let salaried_employee = Employee::new(self.id, PayType::Salaried);
         //self.db.add_employee(&salaried_employee);
     }
 }
